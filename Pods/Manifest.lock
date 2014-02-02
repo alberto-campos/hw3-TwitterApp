@@ -1,0 +1,20 @@
+PODS:
+  - AFNetworking (1.3.3)
+  - AFOAuth1Client (0.2.1):
+    - AFNetworking (~> 1.3)
+  - NZAlertView (0.0.5):
+    - UIImage-Helpers (~> 0.0.1)
+  - UIImage-Helpers (0.0.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.3.3)
+  - AFOAuth1Client
+  - NZAlertView (~> 0.0.5)
+
+SPEC CHECKSUMS:
+  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  AFOAuth1Client: dcde161501da2c20e6822ee26ce2b4f73f04818d
+  NZAlertView: f966e974133ef9443728c761de59437f1ad65ab0
+  UIImage-Helpers: 1a0141077f52b199135dc6999ce603dc5a31ae28
+
+COCOAPODS: 0.29.0

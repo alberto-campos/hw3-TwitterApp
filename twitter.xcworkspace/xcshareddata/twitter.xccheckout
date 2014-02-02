@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67059363-749C-42EE-B152-4BD668EB7427</string>
+	<key>IDESourceControlProjectName</key>
+	<string>twitter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>10B2B4E5-E17D-4FB1-97C5-7F00FDA71C16</key>
+		<string>https://github.com/alberto-campos/Hw1b-movieListing.git</string>
+		<key>F595D5E2-984F-4CB4-AA7C-B7DA3896ED54</key>
+		<string>https://github.com/alberto_campos/ios_twitter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>twitter.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>10B2B4E5-E17D-4FB1-97C5-7F00FDA71C16</key>
+		<string>../../Templates/TableView</string>
+		<key>F595D5E2-984F-4CB4-AA7C-B7DA3896ED54</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alberto_campos/ios_twitter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F595D5E2-984F-4CB4-AA7C-B7DA3896ED54</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F595D5E2-984F-4CB4-AA7C-B7DA3896ED54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios_twitter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>10B2B4E5-E17D-4FB1-97C5-7F00FDA71C16</string>
+			<key>IDESourceControlWCCName</key>
+			<string>movieListing</string>
+		</dict>
+	</array>
+</dict>
+</plist>
