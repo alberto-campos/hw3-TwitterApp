@@ -32,6 +32,10 @@
 		4A2D263314064B2DA5BDFE0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC1DF52D3B94E9285F4C2F7 /* libPods.a */; };
 		5A00159E189F8B2A0092C2B7 /* CreateTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A00159C189F8B2A0092C2B7 /* CreateTweet.m */; };
 		5A00159F189F8B2A0092C2B7 /* CreateTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A00159D189F8B2A0092C2B7 /* CreateTweet.xib */; };
+		5A0015A1189F909E0092C2B7 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0015A0189F909E0092C2B7 /* retweet.png */; };
+		5A0015A3189F91140092C2B7 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0015A2189F91140092C2B7 /* reply.png */; };
+		5A0015A5189F92240092C2B7 /* star_silver.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0015A4189F92240092C2B7 /* star_silver.png */; };
+		5A0015A7189F924F0092C2B7 /* star_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0015A6189F924F0092C2B7 /* star_yellow.png */; };
 		5A82F094189F047B00FC8793 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A82F093189F047B00FC8793 /* Reachability.m */; };
 		5AA18C16189F52C400134667 /* ViewTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA18C14189F52C400134667 /* ViewTweet.m */; };
 		5AA18C17189F52C400134667 /* ViewTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C15189F52C400134667 /* ViewTweet.xib */; };
@@ -88,6 +92,10 @@
 		5A00159B189F8B2A0092C2B7 /* CreateTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTweet.h; sourceTree = "<group>"; };
 		5A00159C189F8B2A0092C2B7 /* CreateTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTweet.m; sourceTree = "<group>"; };
 		5A00159D189F8B2A0092C2B7 /* CreateTweet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTweet.xib; sourceTree = "<group>"; };
+		5A0015A0189F909E0092C2B7 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = "<group>"; };
+		5A0015A2189F91140092C2B7 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		5A0015A4189F92240092C2B7 /* star_silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_silver.png; sourceTree = "<group>"; };
+		5A0015A6189F924F0092C2B7 /* star_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_yellow.png; sourceTree = "<group>"; };
 		5A82F08E189F047300FC8793 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		5A82F08F189F047300FC8793 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		5A82F092189F047B00FC8793 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -279,6 +287,10 @@
 		5AA18C18189F653000134667 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5A0015A4189F92240092C2B7 /* star_silver.png */,
+				5A0015A6189F924F0092C2B7 /* star_yellow.png */,
+				5A0015A2189F91140092C2B7 /* reply.png */,
+				5A0015A0189F909E0092C2B7 /* retweet.png */,
 				5AA18C1B189F660700134667 /* bird.png */,
 				5AA18C19189F65B600134667 /* star.png */,
 			);
@@ -362,11 +374,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0015A5189F92240092C2B7 /* star_silver.png in Resources */,
 				42CC89AB17B0C31900B6D34B /* SignedOutVC.xib in Resources */,
+				5A0015A1189F909E0092C2B7 /* retweet.png in Resources */,
+				5A0015A7189F924F0092C2B7 /* star_yellow.png in Resources */,
 				42CC893617AF4C6A00B6D34B /* InfoPlist.strings in Resources */,
 				42CC893E17AF4C6B00B6D34B /* Images.xcassets in Resources */,
 				42C55E07181209DE000F9FCF /* TweetCell.xib in Resources */,
 				5AA18C17189F52C400134667 /* ViewTweet.xib in Resources */,
+				5A0015A3189F91140092C2B7 /* reply.png in Resources */,
 				5A00159F189F8B2A0092C2B7 /* CreateTweet.xib in Resources */,
 				5AA18C1C189F660700134667 /* bird.png in Resources */,
 				5AA18C1A189F65B600134667 /* star.png in Resources */,

@@ -17,5 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *retweeted_by;
 @property (nonatomic, weak) IBOutlet UIImageView *previewImage;
 @property (nonatomic, weak) IBOutlet UIButton *viewTweet;
+@property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 
+- (IBAction)favoritesTweet:(id)sender;
 @end

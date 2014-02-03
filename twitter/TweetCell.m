@@ -16,6 +16,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+//        CGRect      buttonFrame = self.favoritesButton.frame;
+//        buttonFrame.size = CGSizeMake(5, 5);
+//        self.favoritesButton.frame = buttonFrame;
     }
     return self;
 }
@@ -27,4 +30,18 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)favoritesTweet:(id)sender {
+
+    UIImage* currentImg=[UIImage imageNamed:@"star_silver.png"];
+    
+    if (self.favoritesButton.currentImage == currentImg)
+    {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"star_yellow.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"star_silver.png"] forState:UIControlStateNormal];
+    }
+    
+}
 @end
