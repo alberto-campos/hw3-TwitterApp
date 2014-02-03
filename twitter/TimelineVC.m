@@ -16,6 +16,7 @@
 {
 
     ViewTweet *vTweet;
+    Tweet *tweet;
     
 }
 
@@ -86,7 +87,7 @@
     static NSString *CellIdentifier = @"TweetCell";
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Tweet *tweet = self.tweets[indexPath.row];
+    tweet = self.tweets[indexPath.row];
     //cell.textLabel.text = tweet.text;
     cell.author.text = [tweet.user valueForKey:@"name"];
     //cell.imageView.image = [tweet.user valueForKey:@"profile_image_url"];
@@ -108,7 +109,7 @@
 
    // [SVProgressHUD dismiss];
     
-    
+   // [self next];
     return cell;
 }
 
@@ -154,18 +155,17 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
 
     if (!vTweet) {
         vTweet = [[ViewTweet alloc] initWithNibName:@"ViewTweet" bundle:nil];
     
     }
-    
     [self.navigationController pushViewController:vTweet animated:YES];
     
-    //[self next];
+    Tweet *myTweet = self.tweets[indexPath.row];
+    vTweet.tweetAuthor.text = [myTweet.user valueForKey:@"name"];
+    vTweet.tweetDetail.text = [myTweet.user valueForKey:@"screen_name"];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -204,14 +204,9 @@
 
 -(IBAction)next
 {
-    ViewTweet *vTweet = [[ViewTweet alloc] initWithNibName:nil bundle:nil];
- 
-    [self presentViewController:vTweet animated:YES completion:NULL];
-    vTweet.tweetAuthor.text = @"this is the author tweet";
-    
-    vTweet.TweetDetail.text = @"these are the details";
-    
-    
+
+    vTweet.tweetAuthor.text = [tweet.user valueForKey:@"name"];
+    vTweet.tweetDetail.text = [tweet.user valueForKey:@"screen_name"];
 }
 
 @end
