@@ -10,6 +10,7 @@
 #import "TimelineVC.h"
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "ViewTweet.h"
 
 @interface TimelineVC ()
 
@@ -44,6 +45,7 @@
     
     UINib *customNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.tableView registerNib:customNib forCellReuseIdentifier:@"TweetCell"];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -148,8 +150,25 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self next];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    UITableViewCell *selectedCell = (UITableViewCell *)sender;
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
+//    Tweet *mytweet = self.tweets[indexPath.row];
+//    
+//    NSLog(@"User tapped at index:%i", indexPath.row);
+//    ViewTweet *viewTweet = (viewTweet *)segue.destinationViewController;
+//    ViewTweet.viewTweet = @"my tweet passed";
+//    
+//    NSLog(@"prepare for Segue.");
+//}
+
 
 /*
 #pragma mark - Navigation
@@ -169,6 +188,11 @@
     [User setCurrentUser:nil];
 }
 
+
+- (void)onNewTweetButton {
+    [User setCurrentUser:nil];
+}
+
 - (void)reload {
     [[TwitterClient instance] homeTimelineWithCount:20 sinceId:0 maxId:0 success:^(AFHTTPRequestOperation *operation, id response) {
         NSLog(@"%@", response);
@@ -177,6 +201,14 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // Do nothing
     }];
+}
+
+-(IBAction)next
+{
+    ViewTweet *vTweet = [[ViewTweet alloc] initWithNibName:nil bundle:nil];
+    
+    [self presentViewController:vTweet animated:YES completion:NULL];
+    
 }
 
 @end

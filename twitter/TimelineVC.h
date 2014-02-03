@@ -10,4 +10,6 @@
 
 @interface TimelineVC : UITableViewController
 
+-(IBAction)next;
+
 @end

@@ -57,6 +57,8 @@
     }];
 }
 
+
+
 - (void)onError {
     
     //NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleSuccess title:@"Sign-in canceled" message:@"Thanks for using our Twitter app." delegate:nil];
@@ -75,5 +77,6 @@
     
     //[[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Couldn't log in with Twitter, please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
+
 
 @end

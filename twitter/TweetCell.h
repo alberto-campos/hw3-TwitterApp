@@ -16,5 +16,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *time_published;
 @property (nonatomic, weak) IBOutlet UILabel *retweeted_by;
 @property (nonatomic, weak) IBOutlet UIImageView *previewImage;
+@property (nonatomic, weak) IBOutlet UIButton *viewTweet;
+- (IBAction)next:(id)sender;
 
 @end

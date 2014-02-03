@@ -14,13 +14,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="335" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Did you know that you can tell if someone is a programmer simply by saying the word &quot;timezones&quot; and seeing if they cringe?" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-eF-0vZ">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Did you know that you can tell if someone is a programmer simply by saying the word &quot;timezones&quot; and seeing if they cringe?" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-eF-0vZ">
                         <rect key="frame" x="60" y="39" width="266" height="83"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                         </accessibility>
+                        <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
@@ -55,6 +56,16 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-Bj-CP8">
+                        <rect key="frame" x="270" y="107" width="20" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="*">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="next:" destination="3Sl-ec-FEp" eventType="touchUpInside" id="YDR-7U-zwE"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="vS4-eF-0vZ" secondAttribute="bottom" constant="22" id="7jO-Je-E4A"/>
@@ -76,6 +87,7 @@
                 <outlet property="retweeted_by" destination="oRz-gp-Tdv" id="hue-gp-HyM"/>
                 <outlet property="time_published" destination="jqd-A1-SXv" id="sGN-Wa-PQX"/>
                 <outlet property="twitter_id" destination="uq1-hQ-xNi" id="ACc-bG-J6y"/>
+                <outlet property="viewTweet" destination="i4f-Bj-CP8" id="Oim-Nn-NYF"/>
             </connections>
         </tableViewCell>
     </objects>

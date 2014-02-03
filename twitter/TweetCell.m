@@ -7,6 +7,7 @@
 //
 
 #import "TweetCell.h"
+#import "TimelineVC.h"
 
 @implementation TweetCell
 
@@ -26,4 +27,10 @@
     // Configure the view for the selected state
 }
 
+
+
+
+
+- (IBAction)next:(id)sender {
+}
 @end
