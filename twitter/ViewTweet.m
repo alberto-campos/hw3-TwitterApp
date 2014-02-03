@@ -7,6 +7,7 @@
 //
 
 #import "ViewTweet.h"
+#import "TimelineVC.h"
 
 @interface ViewTweet ()
 
@@ -18,7 +19,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onSignOutButton)];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(onNewTweetButton)];
     }
     return self;
 }
@@ -27,6 +32,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +47,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backButton:(id)sender {
+    
+    TimelineVC *vTweet = [[TimelineVC alloc] initWithNibName:nil bundle:nil];
+    
+    [self presentViewController:vTweet animated:YES completion:NULL];
+  //  vTweet.tweetAuthor.text = @"this is the author tweet";
+    
+  //  vTweet.TweetDetail.text = @"these are the details";
+}
 @end

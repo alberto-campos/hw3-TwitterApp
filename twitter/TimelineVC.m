@@ -13,6 +13,11 @@
 #import "ViewTweet.h"
 
 @interface TimelineVC ()
+{
+
+    ViewTweet *vTweet;
+    
+}
 
 @property (nonatomic, strong) NSMutableArray *tweets;
 
@@ -45,7 +50,6 @@
     
     UINib *customNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.tableView registerNib:customNib forCellReuseIdentifier:@"TweetCell"];
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -151,7 +155,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self next];
+    
+    
+
+    if (!vTweet) {
+        vTweet = [[ViewTweet alloc] initWithNibName:@"ViewTweet" bundle:nil];
+    
+    }
+    
+    [self.navigationController pushViewController:vTweet animated:YES];
+    
+    //[self next];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
