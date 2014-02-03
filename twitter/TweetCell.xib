@@ -34,7 +34,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Q8-B9h">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="broken-twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Q8-B9h">
                         <rect key="frame" x="13" y="42" width="37" height="38"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -119,6 +119,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="broken-twitter.png" width="128" height="128"/>
         <image name="reply.png" width="16" height="12"/>
         <image name="retweet.png" width="16" height="16"/>
         <image name="star_yellow.png" width="16" height="16"/>

@@ -199,7 +199,8 @@
     
     // Prepare view with values
     vTweet.tweetAuthor.text = [myTweet.user valueForKey:@"name"];
-    vTweet.tweetDetail.text = [myTweet.user valueForKey:@"screen_name"];
+    vTweet.twitter_id.text = [myTweet.user valueForKey:@"screen_name"];
+    vTweet.tweetDetail.text = myTweet.text;
     vTweet.time_published.text = [myTweet.user valueForKey:@"created_at"];
     vTweet.retweetsCount.text = numStr;
     vTweet.favoritesCount.text = tweetStr;
