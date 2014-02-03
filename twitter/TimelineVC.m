@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "ViewTweet.h"
 #import "CreateTweet.h"
+#import "NSDate+TimeAgo.h"
 
 @interface TimelineVC ()
 {
@@ -86,6 +87,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDate *timestamp = [[NSDate alloc] initWithTimeIntervalSince1970:0];
     static NSString *CellIdentifier = @"TweetCell";
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -95,6 +97,29 @@
     //cell.imageView.image = [tweet.user valueForKey:@"profile_image_url"];
     cell.twitter_id.text = [tweet.user valueForKey:@"screen_name"];
     cell.ext_tweet.text = tweet.text;
+    
+    timestamp = [tweet.user valueForKey:@"created_at"];
+    cell.time_published.text = [tweet.user valueForKey:@"created_at"];;
+    
+//    NSString *ago = [timestamp timeAgo];
+  //  cell.time_published.text = ago;
+    
+    
+    NSNumber *favCount = [tweet.user valueForKey:@"favourites_count"];
+    NSNumber *notFav;
+    
+    notFav = 0;
+    
+    if ( favCount != notFav)
+    {
+        [cell.favoritesButton setImage:[UIImage imageNamed:@"star_silver.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [cell.favoritesButton setImage:[UIImage imageNamed:@"star_yellow.png"] forState:UIControlStateNormal];
+    }
+    
+    
     
     //Download images asynchronously
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:[tweet.user valueForKey:@"profile_image_url"], indexPath.row]];

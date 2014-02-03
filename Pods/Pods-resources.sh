@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "NSDate+TimeAgo/NSDateTimeAgo.bundle"
 install_resource "NZAlertView/NZAlertView/NZAlertView-Icons.bundle"
 install_resource "NZAlertView/NZAlertView/Views/NZAlertView.xib"
 

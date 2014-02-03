@@ -119,8 +119,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="reply.png" width="32" height="24"/>
-        <image name="retweet.png" width="32" height="32"/>
-        <image name="star_yellow.png" width="32" height="32"/>
+        <image name="reply.png" width="16" height="12"/>
+        <image name="retweet.png" width="16" height="16"/>
+        <image name="star_yellow.png" width="16" height="16"/>
     </resources>
 </document>
