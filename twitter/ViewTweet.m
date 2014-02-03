@@ -23,7 +23,7 @@
 //        
 //        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onSignOutButton)];
 //        
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Reply" style:UIBarButtonItemStylePlain target:self action:@selector(onNewTweetButton)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Reply" style:UIBarButtonItemStylePlain target:self action:@selector(onReplyTweetButton)];
     }
     return self;
 }
@@ -56,4 +56,16 @@
     
   //  vTweet.TweetDetail.text = @"these are the details";
 }
+- (IBAction)favoritesTweet:(id)sender {
+}
+
+- (IBAction)retweeet:(id)sender {
+}
+
+- (IBAction)replyTweet:(id)sender {
+}
+
+- (void)onReplyTweetButton {
+}
+
 @end

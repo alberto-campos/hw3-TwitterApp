@@ -18,6 +18,10 @@
     return [self.data valueOrNilForKeyPath:@"user"];
 }
 
+- (NSNumber *)retweetCount {
+    return [self.data valueOrNilForKeyPath:@"retweet_count"];
+}
+
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array {
     NSMutableArray *tweets = [[NSMutableArray alloc] initWithCapacity:array.count];
     for (NSDictionary *params in array) {

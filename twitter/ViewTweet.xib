@@ -7,8 +7,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewTweet">
             <connections>
-                <outlet property="TweetDetail" destination="dh9-Oo-Pr1" id="WFm-Oi-e8B"/>
-                <outlet property="tweetAuthor" destination="31e-Fs-Qff" id="hFa-7O-mRr"/>
+                <outlet property="favoritesButton" destination="g4z-bt-2J6" id="bFy-5V-Rpu"/>
+                <outlet property="favoritesCount" destination="WLu-yw-8mD" id="u6E-y6-r6v"/>
+                <outlet property="previewImage" destination="Cse-ZK-uYb" id="4xd-3H-3fn"/>
+                <outlet property="replyTweet" destination="nm5-EG-7dl" id="yAk-6K-XSb"/>
+                <outlet property="retweet" destination="g4z-bt-2J6" id="YFO-JO-Nfh"/>
+                <outlet property="retweeted_by" destination="Kqv-wI-sbp" id="2G6-NP-51W"/>
+                <outlet property="retweetsCount" destination="ZLQ-Bd-6e3" id="epu-kp-xqu"/>
+                <outlet property="time_published" destination="LvK-oy-vZT" id="Xkc-I5-PUN"/>
+                <outlet property="tweetAuthor" destination="eRu-5j-zGp" id="wae-ZD-jhO"/>
+                <outlet property="tweetDetail" destination="ZZj-on-9bE" id="0l3-lR-ftT"/>
+                <outlet property="twitter_id" destination="dtZ-zm-rhw" id="mJB-B5-AvS"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -17,18 +26,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh9-Oo-Pr1">
-                    <rect key="frame" x="20" y="339" width="255" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31e-Fs-Qff">
-                    <rect key="frame" x="20" y="368" width="249" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHk-Zk-jWP">
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -82,6 +79,9 @@
                     <state key="normal" image="star_yellow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="favoritesTweet:" destination="-1" eventType="touchUpInside" id="ESZ-jh-NcL"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4z-bt-2J6">
                     <rect key="frame" x="141" y="265" width="20" height="19"/>
@@ -89,6 +89,9 @@
                     <state key="normal" image="retweet.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="retweeet:" destination="-1" eventType="touchUpInside" id="3JO-wb-o61"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTM-mY-8LW">
                     <rect key="frame" x="20" y="25" width="20" height="19"/>
@@ -103,9 +106,12 @@
                     <state key="normal" image="reply.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="replyTweet:" destination="-1" eventType="touchUpInside" id="1nj-0y-GEc"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="89" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLQ-Bd-6e3">
-                    <rect key="frame" x="20" y="216" width="64" height="21"/>
+                    <rect key="frame" x="5" y="216" width="64" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

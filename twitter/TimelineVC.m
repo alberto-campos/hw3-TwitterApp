@@ -188,10 +188,36 @@
     
     }
     [self.navigationController pushViewController:vTweet animated:YES];
-    
+
+    NSNumber *myFavCount;
     Tweet *myTweet = self.tweets[indexPath.row];
+    myFavCount = [myTweet.user valueForKey:@"favourites_count"];
+    
+    NSString *numStr = [NSString stringWithFormat:@"%@",myFavCount];
+    NSString *tweetStr = [NSString stringWithFormat:@"%@",myTweet.retweetCount];
+    
+    
+    // Prepare view with values
     vTweet.tweetAuthor.text = [myTweet.user valueForKey:@"name"];
     vTweet.tweetDetail.text = [myTweet.user valueForKey:@"screen_name"];
+    vTweet.time_published.text = [myTweet.user valueForKey:@"created_at"];
+    vTweet.retweetsCount.text = numStr;
+    vTweet.favoritesCount.text = tweetStr;
+    
+    //Download images asynchronously
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:[myTweet.user valueForKey:@"profile_image_url"], indexPath.row]];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    
+    
+    [vTweet.previewImage setImageWithURLRequest:urlRequest
+                             placeholderImage:nil
+                                      success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                          vTweet.previewImage.image = image;
+                                      } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                          NSLog(@"Failed to download image: %@", error);
+                                      }];
+
+    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
