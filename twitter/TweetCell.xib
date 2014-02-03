@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="broken-twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Q8-B9h">
-                        <rect key="frame" x="13" y="42" width="37" height="38"/>
+                        <rect key="frame" x="11" y="34" width="37" height="38"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="@michael_rooney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq1-hQ-xNi">
@@ -101,8 +101,8 @@
                     <constraint firstItem="oRz-gp-Tdv" firstAttribute="top" secondItem="hjj-Rl-6Cn" secondAttribute="top" id="Vt1-xu-sGI"/>
                     <constraint firstItem="Ggk-yb-xWt" firstAttribute="top" secondItem="hjj-Rl-6Cn" secondAttribute="top" constant="2" id="WlO-Jq-Vs7"/>
                     <constraint firstAttribute="trailing" secondItem="jqd-A1-SXv" secondAttribute="trailing" constant="9" id="XQw-FH-VLH"/>
-                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="top" secondItem="hjj-Rl-6Cn" secondAttribute="top" constant="42" id="aNn-4p-BBq"/>
-                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="13" id="pAZ-qa-40E"/>
+                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="top" secondItem="hjj-Rl-6Cn" secondAttribute="top" constant="34" id="aNn-4p-BBq"/>
+                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="11" id="pAZ-qa-40E"/>
                     <constraint firstAttribute="bottom" secondItem="ARs-aq-cPc" secondAttribute="bottom" constant="8" id="q2S-Gc-f9c"/>
                     <constraint firstItem="nWF-fS-qOo" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="60" id="qlg-nL-Whi"/>
                 </constraints>
