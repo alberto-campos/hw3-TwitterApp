@@ -11,11 +11,13 @@
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "ViewTweet.h"
+#import "CreateTweet.h"
 
 @interface TimelineVC ()
 {
 
     ViewTweet *vTweet;
+    CreateTweet *cTweet;
     Tweet *tweet;
     
 }
@@ -189,7 +191,18 @@
 
 
 - (void)onNewTweetButton {
-    [User setCurrentUser:nil];
+    if (!cTweet) {
+        cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
+        
+    }
+    [self.navigationController pushViewController:cTweet animated:YES];
+    
+    //Tweet *myTweet = self.tweets[indexPath.row];
+    cTweet.author.text = @"Author";
+    
+    //vTweet.tweetDetail.text = [myTweet.user valueForKey:@"screen_name"];
+    
+   // [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)reload {
