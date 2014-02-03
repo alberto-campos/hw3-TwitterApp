@@ -155,21 +155,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    UITableViewCell *selectedCell = (UITableViewCell *)sender;
-//    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
-//    Tweet *mytweet = self.tweets[indexPath.row];
-//    
-//    NSLog(@"User tapped at index:%i", indexPath.row);
-//    ViewTweet *viewTweet = (viewTweet *)segue.destinationViewController;
-//    ViewTweet.viewTweet = @"my tweet passed";
-//    
-//    NSLog(@"prepare for Segue.");
-//}
-
-
 /*
 #pragma mark - Navigation
 
@@ -206,8 +191,12 @@
 -(IBAction)next
 {
     ViewTweet *vTweet = [[ViewTweet alloc] initWithNibName:nil bundle:nil];
-    
+ 
     [self presentViewController:vTweet animated:YES completion:NULL];
+    vTweet.tweetAuthor.text = @"this is the author tweet";
+    
+    vTweet.TweetDetail.text = @"these are the details";
+    
     
 }
 

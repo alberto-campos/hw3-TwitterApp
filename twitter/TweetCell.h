@@ -11,12 +11,11 @@
 @interface TweetCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *author;
-@property (nonatomic, weak) IBOutlet UITextView *ext_tweet;
+@property (nonatomic, weak) IBOutlet UILabel *ext_tweet;
 @property (nonatomic, weak) IBOutlet UILabel *twitter_id;
 @property (nonatomic, weak) IBOutlet UILabel *time_published;
 @property (nonatomic, weak) IBOutlet UILabel *retweeted_by;
 @property (nonatomic, weak) IBOutlet UIImageView *previewImage;
 @property (nonatomic, weak) IBOutlet UIButton *viewTweet;
-- (IBAction)next:(id)sender;
 
 @end

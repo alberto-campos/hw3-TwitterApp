@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewTweet : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *TweetDetail;
+@property (weak, nonatomic) IBOutlet UILabel *tweetAuthor;
 
 @end

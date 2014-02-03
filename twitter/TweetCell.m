@@ -27,10 +27,4 @@
     // Configure the view for the selected state
 }
 
-
-
-
-
-- (IBAction)next:(id)sender {
-}
 @end
