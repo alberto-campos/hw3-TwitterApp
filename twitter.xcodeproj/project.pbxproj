@@ -30,9 +30,12 @@
 		42CC89B917B0D7DD00B6D34B /* NSDictionary+CPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89B817B0D7DD00B6D34B /* NSDictionary+CPAdditions.m */; };
 		42CC89BF17B0F02600B6D34B /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CC89BE17B0F02600B6D34B /* TweetCell.m */; };
 		4A2D263314064B2DA5BDFE0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC1DF52D3B94E9285F4C2F7 /* libPods.a */; };
+		5A12075A189F782B00E75C11 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A120759189F782A00E75C11 /* main.storyboard */; };
 		5A82F094189F047B00FC8793 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A82F093189F047B00FC8793 /* Reachability.m */; };
 		5AA18C16189F52C400134667 /* ViewTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA18C14189F52C400134667 /* ViewTweet.m */; };
 		5AA18C17189F52C400134667 /* ViewTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C15189F52C400134667 /* ViewTweet.xib */; };
+		5AA18C1A189F65B600134667 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C19189F65B600134667 /* star.png */; };
+		5AA18C1C189F660700134667 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C1B189F660700134667 /* bird.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,7 @@
 		42CC89BD17B0F02600B6D34B /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		42CC89BE17B0F02600B6D34B /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		42CC89C017B0F03E00B6D34B /* TweetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		5A120759189F782A00E75C11 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		5A82F08E189F047300FC8793 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		5A82F08F189F047300FC8793 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		5A82F092189F047B00FC8793 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		5AA18C13189F52C400134667 /* ViewTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTweet.h; sourceTree = "<group>"; };
 		5AA18C14189F52C400134667 /* ViewTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTweet.m; sourceTree = "<group>"; };
 		5AA18C15189F52C400134667 /* ViewTweet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewTweet.xib; sourceTree = "<group>"; };
+		5AA18C19189F65B600134667 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		5AA18C1B189F660700134667 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
 		6D8D3D6E0083406F961146BD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CCC1DF52D3B94E9285F4C2F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,6 +216,7 @@
 				5AA18C13189F52C400134667 /* ViewTweet.h */,
 				5AA18C14189F52C400134667 /* ViewTweet.m */,
 				5AA18C15189F52C400134667 /* ViewTweet.xib */,
+				5A120759189F782A00E75C11 /* main.storyboard */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 		42CC89B517B0D7AC00B6D34B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5AA18C18189F653000134667 /* Images */,
 				42CC89B617B0D7C400B6D34B /* Categories */,
 			);
 			name = Utilities;
@@ -261,6 +269,15 @@
 				42CC89C017B0F03E00B6D34B /* TweetCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5AA18C18189F653000134667 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5AA18C1B189F660700134667 /* bird.png */,
+				5AA18C19189F65B600134667 /* star.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,8 +360,11 @@
 				42CC89AB17B0C31900B6D34B /* SignedOutVC.xib in Resources */,
 				42CC893617AF4C6A00B6D34B /* InfoPlist.strings in Resources */,
 				42CC893E17AF4C6B00B6D34B /* Images.xcassets in Resources */,
+				5A12075A189F782B00E75C11 /* main.storyboard in Resources */,
 				42C55E07181209DE000F9FCF /* TweetCell.xib in Resources */,
 				5AA18C17189F52C400134667 /* ViewTweet.xib in Resources */,
+				5AA18C1C189F660700134667 /* bird.png in Resources */,
+				5AA18C1A189F65B600134667 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

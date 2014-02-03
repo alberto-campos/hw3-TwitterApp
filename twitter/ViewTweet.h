@@ -11,5 +11,7 @@
 @interface ViewTweet : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *TweetDetail;
 @property (weak, nonatomic) IBOutlet UILabel *tweetAuthor;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+- (IBAction)backButton:(id)sender;
 
 @end

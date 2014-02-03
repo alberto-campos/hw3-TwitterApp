@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewTweet">
             <connections>
                 <outlet property="TweetDetail" destination="dh9-Oo-Pr1" id="WFm-Oi-e8B"/>
+                <outlet property="backButton" destination="stx-pb-vuQ" id="NN1-N4-ISu"/>
                 <outlet property="tweetAuthor" destination="31e-Fs-Qff" id="hFa-7O-mRr"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -18,17 +19,49 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh9-Oo-Pr1">
-                    <rect key="frame" x="40" y="68" width="255" height="21"/>
+                    <rect key="frame" x="20" y="129" width="255" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31e-Fs-Qff">
-                    <rect key="frame" x="36" y="28" width="249" height="21"/>
+                    <rect key="frame" x="20" y="94" width="249" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-bA-jhs">
+                    <rect key="frame" x="0.0" y="9" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Title" id="uVe-Gj-RLi">
+                            <barButtonItem key="leftBarButtonItem" style="plain" id="Y4F-eW-tRn">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="stx-pb-vuQ">
+                                    <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="&lt;">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="2Rp-ON-adl"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <connections>
+                                <outlet property="backBarButtonItem" destination="Y4F-eW-tRn" id="yeo-1O-9hV"/>
+                            </connections>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHk-Zk-jWP">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="Jwy-iA-Lei"/>
+                        <tabBarItem systemItem="more" id="4BT-3F-VF9"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
