@@ -10,5 +10,9 @@
 
 @interface CreateTweet : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *author;
+@property (strong, nonatomic) IBOutlet UILabel *screen_nameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *userIcon;
+@property (strong, nonatomic) IBOutlet UITextField *charsLeft;
+@property (strong, nonatomic) IBOutlet UITextView *tweetMsg;
 
 @end
