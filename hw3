@@ -1,0 +1,28 @@
+
+To navigate between views:
+- Delegate pattern
+- NSNotificationCenter
+- Global object store
+
+
+GROUP PROJECT
+- Parse
+- Login "with" OAuth 2.0a client
+- All the UINavigationViews
+
+
+IMAGES.XCASSETS
+place your images here.
+
+
+=== GLOBAL OBJECT STORE ===
+Prefered method to pull the new tweet on the top of your tableview's timeline.
+
+=========
+Alberto's task:
+
+Login with Facebook
+Setup Parse
+
+Utkarsh:
+Flows
