@@ -50,12 +50,16 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
 
 - (void)currentUserWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     [self getPath:@"1.1/account/verify_credentials.json" parameters:nil success:success failure:failure];
+  
+    // Store the screen_name and User_name
+
 }
 
 #pragma mark - Statuses API
 
 - (void)homeTimelineWithCount:(int)count sinceId:(int)sinceId maxId:(int)maxId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"count": @(count)}];
+    
     if (sinceId > 0) {
         [params setObject:@(sinceId) forKey:@"since_id"];
     }

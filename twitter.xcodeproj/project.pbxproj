@@ -42,6 +42,8 @@
 		5AA18C17189F52C400134667 /* ViewTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C15189F52C400134667 /* ViewTweet.xib */; };
 		5AA18C1A189F65B600134667 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C19189F65B600134667 /* star.png */; };
 		5AA18C1C189F660700134667 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA18C1B189F660700134667 /* bird.png */; };
+		5AE3B30618A286F60079D0F5 /* ReplyTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3B30418A286F60079D0F5 /* ReplyTweet.m */; };
+		5AE3B30718A286F60079D0F5 /* ReplyTweet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE3B30518A286F60079D0F5 /* ReplyTweet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,9 @@
 		5AA18C15189F52C400134667 /* ViewTweet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewTweet.xib; sourceTree = "<group>"; };
 		5AA18C19189F65B600134667 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		5AA18C1B189F660700134667 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		5AE3B30318A286F60079D0F5 /* ReplyTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyTweet.h; sourceTree = "<group>"; };
+		5AE3B30418A286F60079D0F5 /* ReplyTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTweet.m; sourceTree = "<group>"; };
+		5AE3B30518A286F60079D0F5 /* ReplyTweet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyTweet.xib; sourceTree = "<group>"; };
 		6D8D3D6E0083406F961146BD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CCC1DF52D3B94E9285F4C2F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,6 +237,9 @@
 				5A00159B189F8B2A0092C2B7 /* CreateTweet.h */,
 				5A00159C189F8B2A0092C2B7 /* CreateTweet.m */,
 				5A00159D189F8B2A0092C2B7 /* CreateTweet.xib */,
+				5AE3B30318A286F60079D0F5 /* ReplyTweet.h */,
+				5AE3B30418A286F60079D0F5 /* ReplyTweet.m */,
+				5AE3B30518A286F60079D0F5 /* ReplyTweet.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -389,6 +397,7 @@
 				5A0015A3189F91140092C2B7 /* reply.png in Resources */,
 				5A00159F189F8B2A0092C2B7 /* CreateTweet.xib in Resources */,
 				5AA18C1C189F660700134667 /* bird.png in Resources */,
+				5AE3B30718A286F60079D0F5 /* ReplyTweet.xib in Resources */,
 				5AA18C1A189F65B600134667 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +458,7 @@
 				42CC89AE17B0C7A600B6D34B /* User.m in Sources */,
 				42CC89B117B0C7B800B6D34B /* Tweet.m in Sources */,
 				42CC89B417B0D63C00B6D34B /* RestObject.m in Sources */,
+				5AE3B30618A286F60079D0F5 /* ReplyTweet.m in Sources */,
 				42CC895D17AF6FBB00B6D34B /* TimelineVC.m in Sources */,
 				42CC893C17AF4C6B00B6D34B /* AppDelegate.m in Sources */,
 				42CC893817AF4C6B00B6D34B /* main.m in Sources */,

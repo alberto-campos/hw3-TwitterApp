@@ -68,15 +68,15 @@
 
 - (IBAction)onRetweetButton:(id)sender {
     
-//    NSString *myTweetTxt = self.retweetMsg.text;
-//    
-//    NSLog(@"New tweet accepted %@", myTweetTxt);
-//    
-//    [[TwitterClient instance] retweet:self.tweet.id success:^(AFHTTPRequestOperation *operation, id response) {
-//        [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"ReTweeted successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error during retweeting" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-//    }];
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
+    
+    [[TwitterClient instance] retweet:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
+        [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"ReTweeted successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error during retweeting" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }];
 }
 
 - (void)onSuccess {

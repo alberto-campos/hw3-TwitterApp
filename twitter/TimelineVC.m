@@ -249,12 +249,9 @@
         
     }
     [self.navigationController pushViewController:cTweet animated:YES];
-    
-    //cTweet.author.text = @"This is the On New Tweet Button";
+
     cTweet.author.text = [tweet.user valueForKey:@"screen_name"];
     cTweet.screen_nameLabel.text = [tweet.user valueForKey:@"name"];
-    //vTweet.tweetDetail.text = [myTweet.user valueForKey:@"screen_name"];
-    
    // [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

@@ -41,6 +41,10 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onCreateTweet)];
+    
+   
+   
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -47,6 +47,7 @@
         [[TwitterClient instance] currentUserWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
             NSLog(@"response: %@", response);
             [User setCurrentUser:[[User alloc] initWithDictionary:response]];
+            NSLog(@"Current User: %@", response);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self onError];
         }];

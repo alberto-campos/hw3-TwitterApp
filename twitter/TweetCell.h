@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateTweet.h"
 
 @interface TweetCell : UITableViewCell
+{
+    CreateTweet *cTweet;
+    Tweet *tweet;
+    
+}
 
 @property (nonatomic, weak) IBOutlet UILabel *author;
 @property (nonatomic, weak) IBOutlet UILabel *ext_tweet;

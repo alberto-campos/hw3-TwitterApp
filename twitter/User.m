@@ -48,4 +48,6 @@ static User *_currentUser;
     }
 }
 
+// TODO: Remove current user from NSUserDefaults.
+
 @end
