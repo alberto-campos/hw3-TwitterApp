@@ -18,6 +18,12 @@
 @property (nonatomic, weak) IBOutlet UIImageView *previewImage;
 @property (nonatomic, weak) IBOutlet UIButton *viewTweet;
 @property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
+@property (strong, nonatomic) IBOutlet UIButton *onRetweetButton;
+@property (strong, nonatomic) Tweet *tweet;
+@property (strong, nonatomic) IBOutlet UILabel *id_hidden;
 
 - (IBAction)favoritesTweet:(id)sender;
+- (IBAction)onRetweetButton:(id)sender;
+
+
 @end

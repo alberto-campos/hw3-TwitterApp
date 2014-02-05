@@ -13,6 +13,7 @@
 @property (nonatomic, strong, readonly) NSString *text;
 @property (nonatomic, strong, readonly) NSNumber *retweetCount;
 @property (nonatomic, strong, readonly) NSDictionary *user;
+@property (nonatomic, strong, readonly) NSString *tweet_id;
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array;
 

@@ -97,6 +97,7 @@
     //cell.imageView.image = [tweet.user valueForKey:@"profile_image_url"];
     cell.twitter_id.text = [tweet.user valueForKey:@"screen_name"];
     cell.ext_tweet.text = tweet.text;
+    cell.id_hidden.text = tweet.tweet_id;
     
     timestamp = [tweet.user valueForKey:@"created_at"];
     cell.time_published.text = [tweet.user valueForKey:@"created_at"];;
@@ -256,6 +257,7 @@
     
    // [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 
 - (void)reload {
     [[TwitterClient instance] homeTimelineWithCount:20 sinceId:0 maxId:0 success:^(AFHTTPRequestOperation *operation, id response) {
