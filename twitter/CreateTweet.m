@@ -9,9 +9,17 @@
 #import "CreateTweet.h"
 #import "TwitterClient.h"
 #import "NZAlertView.h"
+#import "TimelineVC.h"
 
 @interface CreateTweet ()
 
+{
+    
+    TimelineVC *timelineTweet;
+}
+
+- (void)openTimelineVC;
+- (void)onSuccess;
 - (void)onError;
 
 @end
@@ -33,8 +41,6 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onCreateTweet)];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,11 +69,40 @@
         NSLog(@"error: %@", error);
         [self onError];
     }];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [self onSuccess];
+}
 
+- (void)openTimelineVC {
+    if (!timelineTweet) {
+        timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+    }
+    [self.navigationController pushViewController:timelineTweet animated:YES];
+    
+}
+
+- (void)onSuccess {
+    NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleSuccess
+                                                      title:@"Success!"
+                                                    message:@"Tweeted"
+                                                   delegate:nil];
+   
+    [UIView animateWithDuration:.3f
+                     animations:^
+     {
+         alert.frame = CGRectMake(300, 250, 320, 100);
+     }];
+    
+    [alert setStatusBarColor:[UIColor greenColor]];
+    [alert setTextAlignment:NSTextAlignmentCenter];
+    
+    [alert show];
+  
 }
 
 - (void)onError {
-        NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleInfo
+        NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
                                                           title:@"Error Posting Tweet"
                                                         message:@"Thanks for using our Twitter app."
                                                        delegate:nil];
