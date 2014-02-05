@@ -79,6 +79,44 @@
     }];
 }
 
+- (IBAction)onReplyButton:(id)sender {
+
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
+    
+    NSString *reply = self.replyText.text;
+    reply = [reply stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    
+    [[TwitterClient instance] reply:reply forPostId:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"Successfully replied.");
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your reply was sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+        [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Couldn't reply to the status, please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }];
+}
+
+- (void)onReplyButton2
+{
+    
+    if (!cTweet) {
+        cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
+    }
+    [timelineTweet.navigationController pushViewController:cTweet animated:YES];
+    
+    //    CreateTweet *cTweet = [[CreateTweet alloc] initWithNibName:nil bundle:nil];
+    //    [timelineTweet presentViewController:cTweet animated:YES completion:NULL];
+    
+    //
+    //    CreateTweet *cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
+    //    [[timelineTweet navigationController] pushViewController:cTweet animated:YES];
+    //
+}
+
 - (void)onSuccess {
     NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleSuccess
                                                       title:@"Success!"

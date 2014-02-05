@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="3Sl-ec-FEp" customClass="TweetCell">
-            <rect key="frame" x="0.0" y="0.0" width="334" height="145"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="329" id="3Sl-ec-FEp" customClass="TweetCell">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="329"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Sl-ec-FEp" id="hjj-Rl-6Cn">
-                <rect key="frame" x="0.0" y="0.0" width="334" height="144"/>
+                <rect key="frame" x="0.0" y="0.0" width="334" height="328"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Michael Rooney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ic-zpr">
@@ -46,7 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-fS-qOo">
-                        <rect key="frame" x="60" y="42" width="266" height="75"/>
+                        <rect key="frame" x="60" y="42" width="266" height="259"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <string key="text">Learn Git and GitHub basics at GitHub HQ tonight! We're opening up a few more tickets to Patchwork: https://ti.to/github-events/</string>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -85,6 +85,9 @@
                         <state key="normal" image="reply.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="onReplyButton:" destination="3Sl-ec-FEp" eventType="touchUpInside" id="bST-sg-lDd"/>
+                        </connections>
                     </button>
                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_id - Hidden" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWU-WE-SGB">
                         <rect key="frame" x="231" y="103" width="95" height="21"/>
@@ -93,6 +96,19 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-oW-khU">
+                        <rect key="frame" x="47" y="49" width="287" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Rj-RI-6fW">
+                                <rect key="frame" x="20" y="14" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nWF-fS-qOo" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="60" id="6dM-5s-zCz"/>
@@ -121,6 +137,8 @@
                 <outlet property="id_hidden" destination="sWU-WE-SGB" id="edN-EB-8Yt"/>
                 <outlet property="onRetweetButton" destination="7VR-Xe-0r6" id="JRa-fg-GVn"/>
                 <outlet property="previewImage" destination="AhY-Q8-B9h" id="ks9-zM-ZcP"/>
+                <outlet property="replyText" destination="9Rj-RI-6fW" id="tRs-wL-ucK"/>
+                <outlet property="replyView" destination="1J0-oW-khU" id="BQ8-oF-yFg"/>
                 <outlet property="retweeted_by" destination="oRz-gp-Tdv" id="hue-gp-HyM"/>
                 <outlet property="time_published" destination="jqd-A1-SXv" id="sGN-Wa-PQX"/>
                 <outlet property="twitter_id" destination="uq1-hQ-xNi" id="ACc-bG-J6y"/>

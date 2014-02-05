@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "CreateTweet.h"
+#import "TimelineVC.h"
 
 @interface TweetCell : UITableViewCell
 {
     CreateTweet *cTweet;
     Tweet *tweet;
+    TimelineVC *timelineTweet;
     
 }
+
 
 @property (nonatomic, weak) IBOutlet UILabel *author;
 @property (nonatomic, weak) IBOutlet UILabel *ext_tweet;
@@ -27,9 +30,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *onRetweetButton;
 @property (strong, nonatomic) Tweet *tweet;
 @property (strong, nonatomic) IBOutlet UILabel *id_hidden;
+@property (strong, nonatomic) IBOutlet UIView *replyView;
+@property (strong, nonatomic) IBOutlet UITextField *replyText;
 
 - (IBAction)favoritesTweet:(id)sender;
 - (IBAction)onRetweetButton:(id)sender;
-
+- (IBAction)onReplyButton:(id)sender;
 
 @end
