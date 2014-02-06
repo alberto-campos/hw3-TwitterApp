@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetDetail;
 @property (weak, nonatomic) IBOutlet UILabel *tweetAuthor;
 @property (nonatomic, weak) IBOutlet UILabel *twitter_id;
+@property (strong, nonatomic) IBOutlet UILabel *id_hidden;
 @property (nonatomic, weak) IBOutlet UILabel *time_published;
 @property (nonatomic, weak) IBOutlet UILabel *retweeted_by;
 @property (weak, nonatomic) IBOutlet UILabel *retweetsCount;

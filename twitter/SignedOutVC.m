@@ -32,6 +32,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    globalTwitter = [GlobalVariables timelineGlobal];
+    globalTwitter.twitter_screen_name = @"Name from SignedOutVC.";
 }
 
 - (void)didReceiveMemoryWarning

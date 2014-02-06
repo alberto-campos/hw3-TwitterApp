@@ -16,11 +16,9 @@
 
 @interface TimelineVC ()
 {
-
     ViewTweet *vTweet;
     CreateTweet *cTweet;
     Tweet *tweet;
-    
 }
 
 @property (nonatomic, strong) NSMutableArray *tweets;
@@ -54,7 +52,7 @@
     
     UINib *customNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.tableView registerNib:customNib forCellReuseIdentifier:@"TweetCell"];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -201,6 +199,7 @@
     // Prepare view with values
     vTweet.tweetAuthor.text = [myTweet.user valueForKey:@"name"];
     vTweet.twitter_id.text = [myTweet.user valueForKey:@"screen_name"];
+    vTweet.id_hidden.text = myTweet.tweet_id;
     vTweet.tweetDetail.text = myTweet.text;
     vTweet.time_published.text = [myTweet.user valueForKey:@"created_at"];
     vTweet.retweetsCount.text = numStr;

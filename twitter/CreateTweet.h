@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalVariables.h"
 
-@interface CreateTweet : UIViewController
+@interface CreateTweet : UIViewController {
+    GlobalVariables *globalTwitter;
+}
+
+
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (strong, nonatomic) IBOutlet UILabel *screen_nameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *userIcon;

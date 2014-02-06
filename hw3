@@ -26,3 +26,28 @@ Setup Parse
 
 Utkarsh:
 Flows
+
+
+//////
+
+Never call drawRect directly
+Use SetLenght 
+and then call setNeedsDisplay
+
+
+Favorite effects:
+1) Timer
+2) Touch to move things around
+3) Touch
+
+
+//
+self.center = location;
+frame and location are 
+
+UIView animateWithDuration:0.5 animations: =^{
+	self.center = self.initial Center;	
+}
+
+// Using the "spring" effect introduced in iOS 7
+[UIView animateWithDuration ]

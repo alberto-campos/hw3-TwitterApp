@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CreateTweet.h"
 #import "TimelineVC.h"
+#import "GlobalVariables.h"
 
 @interface TweetCell : UITableViewCell
 {
     CreateTweet *cTweet;
     Tweet *tweet;
-    TimelineVC *timelineTweet;
-    
+    GlobalVariables *globalTwitter;
 }
 
 

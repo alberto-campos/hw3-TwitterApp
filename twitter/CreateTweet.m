@@ -13,11 +13,6 @@
 
 @interface CreateTweet ()
 
-{
-    
-    TimelineVC *timelineTweet;
-}
-
 - (void)openTimelineVC;
 - (void)onSuccess;
 - (void)onError;
@@ -42,7 +37,9 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onCreateTweet)];
     
-   
+    if (!globalTwitter) {
+        globalTwitter = [GlobalVariables timelineGlobal];
+    }
    
     
 }
@@ -79,10 +76,15 @@
 }
 
 - (void)openTimelineVC {
-    if (!timelineTweet) {
-        timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
-    }
-    [self.navigationController pushViewController:timelineTweet animated:YES];
+    
+    
+    
+   // if (!globalTwitter.twitter_timeline) {
+     //   globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+       // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+   // }
+   // [globalTwitter.twitter_timeline.navigationController pushViewController:globalTwitter.twitter_timeline animated:YES];
+//    [globalTwitter.twitter_timeline.navigationController pushViewController:timelineTweet animated:YES];
     
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalVariables.h"
 
-@interface TimelineVC : UITableViewController
-
+@interface TimelineVC : UITableViewController 
 -(IBAction)next;
 
 @end

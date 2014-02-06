@@ -8,6 +8,7 @@
 
 #import "ViewTweet.h"
 #import "TimelineVC.h"
+#import "NZAlertView.h"
 
 @interface ViewTweet ()
 
@@ -52,11 +53,40 @@
     TimelineVC *vTweet = [[TimelineVC alloc] initWithNibName:nil bundle:nil];
     
     [self presentViewController:vTweet animated:YES completion:NULL];
-  //  vTweet.tweetAuthor.text = @"this is the author tweet";
-    
-  //  vTweet.TweetDetail.text = @"these are the details";
 }
 - (IBAction)favoritesTweet:(id)sender {
+    UIImage* currentImg=[UIImage imageNamed:@"star_silver.png"];
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
+    
+    NSLog(@"currentImg: %@", currentImg);
+    NSLog(@"currentImg: %@", self.favoritesButton.currentImage);
+    
+    
+    if (self.favoritesButton.currentImage == currentImg)
+    {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"star_yellow.png"] forState:UIControlStateNormal];
+        
+        
+        [[TwitterClient instance] favorite:myTweetID
+                                   success:^(AFHTTPRequestOperation *operation, id response)
+         {
+             
+             NSLog(@"Favorited tweet ID: %@", myTweetID);
+         }
+                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         {
+             [self onError];
+         }];
+    }
+    else
+    {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"star_silver.png"] forState:UIControlStateNormal];
+        
+        // TODO: implement "Unfavorite"
+        [self onError];
+    }
 }
 
 - (IBAction)retweeet:(id)sender {
@@ -66,6 +96,39 @@
 }
 
 - (void)onReplyTweetButton {
+}
+
+- (void)onSuccess {
+    NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleSuccess
+                                                      title:@"Success!"
+                                                    message:@"Favorited"
+                                                   delegate:nil];
+    
+    [UIView animateWithDuration:.3f
+                     animations:^
+     {
+         alert.frame = CGRectMake(300, 250, 320, 100);
+     }];
+    
+    [alert setStatusBarColor:[UIColor greenColor]];
+    [alert setTextAlignment:NSTextAlignmentCenter];
+    
+    [alert show];
+    
+}
+
+- (void)onError {
+    NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                      title:@"Something went wrong"
+                                                    message:@"Error adding to favorites."
+                                                   delegate:nil];
+    
+    [alert setStatusBarColor:[UIColor greenColor]];
+    [alert setTextAlignment:NSTextAlignmentCenter];
+    
+    [alert show];
+    
+    
 }
 
 @end

@@ -81,6 +81,28 @@
 
 - (IBAction)onReplyButton:(id)sender {
 
+//    if (!globalTwitter.twitter_timeline) {
+//        globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+//        // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+//    }
+//    [globalTwitter.twitter_timeline.navigationController pushViewController:globalTwitter.twitter_timeline animated:YES];
+    
+    if (!globalTwitter) {
+        globalTwitter = [GlobalVariables timelineGlobal];
+    
+      //  globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+        // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+    }
+    NSLog(@"Global label came from TimeLine: %@", globalTwitter.twitter_screen_name);
+   // [globalTwitter.twitter_timeline.navigationController pushViewController:globalTwitter.twitter_timeline animated:YES];
+    globalTwitter.twitter_screen_name = @"Changed in TweetCell";
+    NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
+
+}
+
+- (void)onReplyButton2
+{
+    
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
     [f setNumberStyle:NSNumberFormatterDecimalStyle];
     NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
@@ -91,30 +113,13 @@
     
     [[TwitterClient instance] reply:reply forPostId:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
         NSLog(@"Successfully replied.");
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your reply was sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-//        }];
+        //        [self dismissViewControllerAnimated:YES completion:^{
+        //            [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your reply was sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        //        }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", error);
         [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Couldn't reply to the status, please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
-}
-
-- (void)onReplyButton2
-{
-    
-    if (!cTweet) {
-        cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
-    }
-    [timelineTweet.navigationController pushViewController:cTweet animated:YES];
-    
-    //    CreateTweet *cTweet = [[CreateTweet alloc] initWithNibName:nil bundle:nil];
-    //    [timelineTweet presentViewController:cTweet animated:YES completion:NULL];
-    
-    //
-    //    CreateTweet *cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
-    //    [[timelineTweet navigationController] pushViewController:cTweet animated:YES];
-    //
 }
 
 - (void)onSuccess {

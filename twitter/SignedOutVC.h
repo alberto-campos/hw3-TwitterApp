@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalVariables.h"
 
-@interface SignedOutVC : UIViewController
+@interface SignedOutVC : UIViewController {
+    GlobalVariables *globalTwitter;
+}
 
 @end
