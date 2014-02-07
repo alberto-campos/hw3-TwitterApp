@@ -7,6 +7,7 @@
 //
 
 #import "TweetCell.h"
+#import "CreateTweet.h"
 #import "Tweet.h"
 #import "TimelineVC.h"
 #import "TwitterClient.h"
@@ -81,22 +82,21 @@
 
 - (IBAction)onReplyButton:(id)sender {
 
-//    if (!globalTwitter.twitter_timeline) {
-//        globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
-//        // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
-//    }
-//    [globalTwitter.twitter_timeline.navigationController pushViewController:globalTwitter.twitter_timeline animated:YES];
-    
-    if (!globalTwitter) {
-        globalTwitter = [GlobalVariables timelineGlobal];
-    
-      //  globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
-        // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+    if (!cTweet) {
+        cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
     }
-    NSLog(@"Global label came from TimeLine: %@", globalTwitter.twitter_screen_name);
-   // [globalTwitter.twitter_timeline.navigationController pushViewController:globalTwitter.twitter_timeline animated:YES];
+    globalTwitter = [GlobalVariables timelineGlobal];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:cTweet];
+    
     globalTwitter.twitter_screen_name = @"Changed in TweetCell";
-    NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
+    cTweet.author.text = [tweet.user valueForKey:@"screen_name"];
+    cTweet.screen_nameLabel.text = [tweet.user valueForKey:@"name"];
+    
+     NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
+    
+    [globalTwitter.twitter_timeline.navigationController pushViewController:cTweet animated:YES];
+
 
 }
 

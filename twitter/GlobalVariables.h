@@ -12,12 +12,13 @@
 @interface GlobalVariables : NSObject {
     NSString *twitter_screen_name;
     NSNumber *twitter_id;
-    //TimelineVC *twitter_timeline;
+    TimelineVC *twitter_timeline;
+    //UITableViewController *twitter_timeline;
 }
 
 @property (nonatomic) NSString *twitter_screen_name;
 @property (nonatomic) NSNumber *twitter_id;
-//@property (nonatomic) TimelineVC *twitter_timeline;
+@property (nonatomic) UITableViewController *twitter_timeline;
 
 +(GlobalVariables *)timelineGlobal;
 

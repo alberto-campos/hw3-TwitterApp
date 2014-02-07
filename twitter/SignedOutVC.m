@@ -9,6 +9,7 @@
 #import "SignedOutVC.h"
 #import "TwitterClient.h"
 #import "NZAlertView.h"
+#import "TimelineVC.h"
 
 @interface SignedOutVC ()
 
@@ -33,8 +34,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+   // globalTwitter = [GlobalVariables timelineGlobal];
+   //
+    
+   // if (!globalTwitter) {
     globalTwitter = [GlobalVariables timelineGlobal];
+    globalTwitter.twitter_timeline = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
     globalTwitter.twitter_screen_name = @"Name from SignedOutVC.";
+        // timelineTweet = [[TimelineVC alloc] initWithNibName:@"TimelineVC" bundle:nil];
+    //}
+    
 }
 
 - (void)didReceiveMemoryWarning

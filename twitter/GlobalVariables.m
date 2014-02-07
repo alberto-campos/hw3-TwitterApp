@@ -12,7 +12,7 @@
     GlobalVariables * twitter_singleton;
 }
 
-//@synthesize twitter_timeline;
+@synthesize twitter_timeline;
 @synthesize twitter_id;
 @synthesize twitter_screen_name;
 
