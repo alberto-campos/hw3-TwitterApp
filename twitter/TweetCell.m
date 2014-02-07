@@ -88,15 +88,16 @@
     globalTwitter = [GlobalVariables timelineGlobal];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:cTweet];
-    
+    //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:globalTwitter.twitter_timeline];
     globalTwitter.twitter_screen_name = @"Changed in TweetCell";
-    cTweet.author.text = [tweet.user valueForKey:@"screen_name"];
-    cTweet.screen_nameLabel.text = [tweet.user valueForKey:@"name"];
+
     
      NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
     
     [globalTwitter.twitter_timeline.navigationController pushViewController:cTweet animated:YES];
-
+    
+    cTweet.author.text = [tweet.user valueForKey:@"screen_name"];
+    cTweet.screen_nameLabel.text = [tweet.user valueForKey:@"name"];
 
 }
 

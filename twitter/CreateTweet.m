@@ -14,6 +14,8 @@
 @interface CreateTweet ()
 
 - (void)openTimelineVC;
+- (void)onCreateTweet;
+- (void)onCancelButton;
 - (void)onSuccess;
 - (void)onError;
 
@@ -34,6 +36,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+   // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButton)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onCreateTweet)];
     
@@ -73,6 +77,15 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     [self onSuccess];
+}
+
+
+- (void)onCancelButton {
+    
+    globalTwitter = [GlobalVariables timelineGlobal];
+    //[globalTwitter.twitter_timeline.navigationController popToRootViewControllerAnimated:YES];
+    //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:globalTwitter.twitter_timeline];
+    [globalTwitter.twitter_timeline.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)openTimelineVC {
