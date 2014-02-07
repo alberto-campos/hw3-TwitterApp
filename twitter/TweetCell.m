@@ -21,6 +21,9 @@
     if (self) {
         // Initialization code
     }
+    
+    self.heightConstraint.constant = 40;
+    self.heightConstraintReply.constant =50;
     return self;
 }
 
@@ -80,8 +83,9 @@
     }];
 }
 
-- (IBAction)onReplyButton:(id)sender {
 
+- (IBAction)onReplyButtonNOTWORKING:(id)sender {
+    
     if (!cTweet) {
         cTweet = [[CreateTweet alloc] initWithNibName:@"CreateTweet" bundle:nil];
     }
@@ -90,14 +94,39 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:cTweet];
     //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:globalTwitter.twitter_timeline];
     globalTwitter.twitter_screen_name = @"Changed in TweetCell";
-
     
-     NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
+    
+    NSLog(@"Global after: %@", globalTwitter.twitter_screen_name);
     
     [globalTwitter.twitter_timeline.navigationController pushViewController:cTweet animated:YES];
     
     cTweet.author.text = [tweet.user valueForKey:@"screen_name"];
     cTweet.screen_nameLabel.text = [tweet.user valueForKey:@"name"];
+    
+}
+
+- (IBAction)onReplyButton:(id)sender {
+    self.heightConstraintReply.constant = 25;
+    
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
+    
+    NSString *reply = self.replyText.text;
+    reply = [reply stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    
+    [[TwitterClient instance] reply:reply forPostId:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"Successfully replied.");
+        //        [self dismissViewControllerAnimated:YES completion:^{
+        //            [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your reply was sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        //        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+        [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Couldn't reply to the status, please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }];
+    
+    [self onSuccess];
 
 }
 

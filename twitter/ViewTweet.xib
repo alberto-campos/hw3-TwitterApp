@@ -77,7 +77,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikO-xk-ZZa">
                     <rect key="frame" x="218" y="265" width="20" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="star_silver.png">
+                    <state key="normal" image="Star">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -87,7 +87,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4z-bt-2J6">
                     <rect key="frame" x="141" y="265" width="20" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="retweet.png">
+                    <state key="normal" image="Retweet">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -104,7 +104,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nm5-EG-7dl">
                     <rect key="frame" x="82" y="265" width="20" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="reply.png">
+                    <state key="normal" image="Reply">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -172,9 +172,10 @@
         </view>
     </objects>
     <resources>
+        <image name="Reply" width="24" height="24"/>
+        <image name="Retweet" width="24" height="24"/>
+        <image name="Star" width="24" height="24"/>
         <image name="broken-twitter.png" width="128" height="128"/>
-        <image name="reply.png" width="16" height="12"/>
         <image name="retweet.png" width="16" height="16"/>
-        <image name="star_silver.png" width="16" height="16"/>
     </resources>
 </document>

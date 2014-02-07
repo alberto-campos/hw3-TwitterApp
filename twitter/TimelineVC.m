@@ -79,30 +79,50 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [indexPath row] + 220;
+{    
+    CGSize size;
+    NSString *text;
+
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        size = CGSizeMake(209, MAXFLOAT);
+    }
+    else size = CGSizeMake(469, MAXFLOAT);
+
+    text = tweet.text;
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(209, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:11] } context:nil];
+
+    return MAX(rect.size.height + 200, 70);
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDate *timestamp = [[NSDate alloc] initWithTimeIntervalSince1970:0];
+    NSString *timeRead;
     static NSString *CellIdentifier = @"TweetCell";
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     tweet = self.tweets[indexPath.row];
     //cell.textLabel.text = tweet.text;
+    
     cell.author.text = [tweet.user valueForKey:@"name"];
     //cell.imageView.image = [tweet.user valueForKey:@"profile_image_url"];
     cell.twitter_id.text = [tweet.user valueForKey:@"screen_name"];
+    cell.replyText.text = [@"@" stringByAppendingString:cell.twitter_id.text];
     cell.ext_tweet.text = tweet.text;
     cell.id_hidden.text = tweet.tweet_id;
     
-    timestamp = [tweet.user valueForKey:@"created_at"];
-    cell.time_published.text = [tweet.user valueForKey:@"created_at"];;
+    //timestamp = [tweet.user valueForKey:@"created_at"];
+    timeRead = [tweet.user valueForKey:@"created_at"];
+    cell.time_published.text = [tweet.user valueForKey:@"created_at"];
     
-//    NSString *ago = [timestamp timeAgo];
-  //  cell.time_published.text = ago;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE MMM dd HH:mm:ss '+0000' yyyy"];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en-US"]];
     
+    timestamp = [formatter dateFromString:timeRead];
+    
+    cell.time_published.text = timestamp.timeAgo;
     
     NSNumber *favCount = [tweet.user valueForKey:@"favourites_count"];
     NSNumber *notFav;

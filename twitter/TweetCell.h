@@ -32,6 +32,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *id_hidden;
 @property (strong, nonatomic) IBOutlet UIView *replyView;
 @property (strong, nonatomic) IBOutlet UITextField *replyText;
+@property (strong, nonatomic) IBOutlet UIView *viewTweetedBy;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraintReply;
 
 - (IBAction)favoritesTweet:(id)sender;
 - (IBAction)onRetweetButton:(id)sender;
