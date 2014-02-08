@@ -8,6 +8,7 @@
 
 #import "TwitterClient.h"
 #import "AFNetworking.h"
+#import "GlobalVariables.h"
 
 #define TWITTER_BASE_URL [NSURL URLWithString:@"https://api.twitter.com/"]
 #define TWITTER_CONSUMER_KEY @"vYcAO1O9IQtLqYMEM8z5PA"
@@ -49,10 +50,10 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
 }
 
 - (void)currentUserWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    
     [self getPath:@"1.1/account/verify_credentials.json" parameters:nil success:success failure:failure];
   
     // Store the screen_name and User_name
-
 }
 
 #pragma mark - Statuses API
@@ -100,6 +101,17 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
     }];
 }
 
+- (void)unfavorite:(NSNumber *)tweetId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"id": tweetId}];
+    
+    [self postPath:@"1.1/favorites/destroy.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(operation, responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(operation, error);
+    }];
+}
+
+
 - (void)reply:(NSString *)status forPostId:(NSNumber *)postId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"status": status,
                                                                                   @"in_reply_to_status_id": postId}];
@@ -109,6 +121,10 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(operation, error);
     }];
+    
+    
+    
+    
     
 }
 

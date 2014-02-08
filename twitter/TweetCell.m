@@ -63,8 +63,19 @@
     {
         [self.favoritesButton setImage:[UIImage imageNamed:@"star_silver.png"] forState:UIControlStateNormal];
         
-        // TODO: implement "Unfavorite"
-        [self onError];
+        [self.favoritesButton setImage:[UIImage imageNamed:@"star_yellow.png"] forState:UIControlStateNormal];
+        
+        
+        [[TwitterClient instance] unfavorite:myTweetID
+                                   success:^(AFHTTPRequestOperation *operation, id response)
+         {
+             
+             NSLog(@"Unavorited tweet ID: %@", myTweetID);
+         }
+                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         {
+             [self onError];
+         }];
     }
 
     
