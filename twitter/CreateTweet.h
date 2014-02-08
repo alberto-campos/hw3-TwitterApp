@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *userIcon;
 @property (strong, nonatomic) IBOutlet UITextField *charsLeft;
 @property (strong, nonatomic) IBOutlet UITextView *tweetMsg;
+@property (strong, nonatomic) IBOutlet UITextField *whatsHappening;
 
 @end

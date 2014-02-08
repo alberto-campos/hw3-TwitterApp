@@ -98,6 +98,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDate *timestamp = [[NSDate alloc] initWithTimeIntervalSince1970:0];
+    
     NSString *timeRead;
     static NSString *CellIdentifier = @"TweetCell";
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -110,6 +111,7 @@
     cell.twitter_id.text = [tweet.user valueForKey:@"screen_name"];
     cell.replyText.text = [@"@" stringByAppendingString:cell.twitter_id.text];
     cell.ext_tweet.text = tweet.text;
+    cell.retweeted_by.text = [tweet.user valueForKey:@"current_user_retweet"];
     cell.id_hidden.text = tweet.tweet_id;
     
     //timestamp = [tweet.user valueForKey:@"created_at"];

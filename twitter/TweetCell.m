@@ -77,9 +77,12 @@
     NSNumber * myTweetID = [f numberFromString:self.id_hidden.text];
     
     [[TwitterClient instance] retweet:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
-        [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"ReTweeted successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        
+        [self onSuccess];
+  //      [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"ReTweeted successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error during retweeting" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [self onSuccess];
+//        [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error during retweeting" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
 }
 
@@ -118,11 +121,13 @@
     
     [[TwitterClient instance] reply:reply forPostId:myTweetID success:^(AFHTTPRequestOperation *operation, id response) {
         NSLog(@"Successfully replied.");
+        [self onSuccess];
         //        [self dismissViewControllerAnimated:YES completion:^{
         //            [[[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your reply was sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         //        }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", error);
+        [self onError];
         [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Couldn't reply to the status, please try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
     
@@ -155,7 +160,7 @@
 - (void)onSuccess {
     NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleSuccess
                                                       title:@"Success!"
-                                                    message:@"Favorited"
+                                                    message:@"Operation completed."
                                                    delegate:nil];
     
     [UIView animateWithDuration:.3f
@@ -174,7 +179,7 @@
 - (void)onError {
     NZAlertView *alert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
                                                       title:@"Something went wrong"
-                                                    message:@"Error adding to favorites."
+                                                    message:@"Error performing operation."
                                                    delegate:nil];
     
     [alert setStatusBarColor:[UIColor greenColor]];

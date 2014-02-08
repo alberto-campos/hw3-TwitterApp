@@ -84,7 +84,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARs-aq-cPc">
                                 <rect key="frame" x="177" y="-2" width="20" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Star">
+                                <state key="normal" image="star_yellow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -166,7 +166,7 @@
     <resources>
         <image name="Reply" width="24" height="24"/>
         <image name="Retweet" width="24" height="24"/>
-        <image name="Star" width="24" height="24"/>
         <image name="broken-twitter.png" width="128" height="128"/>
+        <image name="star_yellow.png" width="16" height="16"/>
     </resources>
 </document>

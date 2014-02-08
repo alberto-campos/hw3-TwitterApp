@@ -57,7 +57,7 @@
 #pragma mark - Private methods
 
 - (void)onCreateTweet {
-    NSString *myTweetTxt = self.tweetMsg.text;
+    NSString *myTweetTxt = self.whatsHappening.text; 
     
     NSLog(@"New tweet accepted %@", myTweetTxt);
 
