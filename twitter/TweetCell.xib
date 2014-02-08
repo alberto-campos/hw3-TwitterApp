@@ -27,7 +27,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="broken-twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Q8-B9h">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="broken-twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Q8-B9h">
                         <rect key="frame" x="11" y="29" width="37" height="38"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -38,7 +38,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-fS-qOo">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-fS-qOo">
                         <rect key="frame" x="60" y="41" width="266" height="107"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <string key="text">Learn Git and GitHub basics at GitHub HQ tonight! We're opening up a few more tickets to Patchwork: https://ti.to/github-events/</string>
@@ -128,11 +128,9 @@
                     <constraint firstItem="9Rj-RI-6fW" firstAttribute="top" secondItem="IsZ-t2-Bdf" secondAttribute="bottom" constant="3" id="0Tj-BY-EjT"/>
                     <constraint firstItem="9Rj-RI-6fW" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="29" id="2Wt-gl-ReO"/>
                     <constraint firstAttribute="trailing" secondItem="nWF-fS-qOo" secondAttribute="trailing" constant="8" id="4gc-GP-jBY"/>
-                    <constraint firstItem="nWF-fS-qOo" firstAttribute="leading" secondItem="AhY-Q8-B9h" secondAttribute="trailing" constant="12" id="5dp-pi-Jds"/>
                     <constraint firstItem="uq1-hQ-xNi" firstAttribute="leading" secondItem="eTX-Ic-zpr" secondAttribute="trailing" constant="23" id="DoN-WM-h1I"/>
                     <constraint firstItem="IsZ-t2-Bdf" firstAttribute="top" secondItem="nWF-fS-qOo" secondAttribute="bottom" constant="9" id="Fr3-Th-Wvo"/>
                     <constraint firstItem="1J0-oW-khU" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="11" id="MgO-QF-sjd"/>
-                    <constraint firstItem="eTX-Ic-zpr" firstAttribute="leading" secondItem="AhY-Q8-B9h" secondAttribute="trailing" constant="12" id="N7v-z2-738"/>
                     <constraint firstAttribute="trailing" secondItem="jqd-A1-SXv" secondAttribute="trailing" constant="7" id="OBM-Se-oWW"/>
                     <constraint firstItem="eTX-Ic-zpr" firstAttribute="top" secondItem="1J0-oW-khU" secondAttribute="bottom" constant="7" id="TaR-mN-LtM"/>
                     <constraint firstAttribute="trailing" secondItem="9Rj-RI-6fW" secondAttribute="trailing" constant="20" id="Vbb-nh-21O"/>
@@ -141,8 +139,9 @@
                     <constraint firstItem="nWF-fS-qOo" firstAttribute="top" secondItem="1J0-oW-khU" secondAttribute="bottom" constant="20" id="Zg7-Rr-e3l"/>
                     <constraint firstItem="jqd-A1-SXv" firstAttribute="top" secondItem="1J0-oW-khU" secondAttribute="bottom" constant="7" id="iCS-nU-9yA"/>
                     <constraint firstItem="uq1-hQ-xNi" firstAttribute="top" secondItem="1J0-oW-khU" secondAttribute="bottom" constant="7" id="iJH-S7-998"/>
-                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="11" id="ltC-ZC-udZ"/>
+                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="top" secondItem="1J0-oW-khU" secondAttribute="bottom" constant="8" id="qg5-bC-Tna"/>
                     <constraint firstAttribute="bottom" secondItem="9Rj-RI-6fW" secondAttribute="bottom" constant="1" id="xoP-4F-hKT"/>
+                    <constraint firstItem="AhY-Q8-B9h" firstAttribute="leading" secondItem="hjj-Rl-6Cn" secondAttribute="leading" constant="11" id="yPe-aV-8xa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
